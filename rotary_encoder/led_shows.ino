@@ -16,7 +16,7 @@
 //   NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip), correct for neopixel stick
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
-int showType = 0;
+int showType = 1;
 
 ClickEncoder *encoder;
 int16_t last, value, counter;
@@ -36,6 +36,7 @@ void setup() {
 
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
+  startShow(showType);
 }
 
 
